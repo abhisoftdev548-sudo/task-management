@@ -15,7 +15,7 @@ const Login = () => {
   }
 
   return (
-    <div className="bg-black min-h-[100vh] w-full flex justify-center items-center text-white px-4 ">
+    <div className="bg-black min-h-screen w-full flex justify-center items-center text-white px-4 ">
       
       {/* Card */}
       <div className="border-2 border-emerald-600 rounded-2xl 
