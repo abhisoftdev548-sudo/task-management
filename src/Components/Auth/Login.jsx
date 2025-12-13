@@ -15,11 +15,11 @@ const Login = () => {
   }
 
   return (
-    <div className="bg-black min-h-screen w-full flex justify-center items-center text-white px-4">
+    <div className="bg-black h-screen w-full flex justify-center items-center text-white px-4 overflow-hidden">
       
       {/* Card */}
       <div className="border-2 border-emerald-600 rounded-2xl 
-                      w-full max-w-sm sm:max-w-md md:max-w-lg
+                       max-w-sm sm:max-w-md md:max-w-lg
                       p-6 sm:p-8 md:p-10">
 
         <form className="flex flex-col gap-5" onSubmit={submitHandler}>
