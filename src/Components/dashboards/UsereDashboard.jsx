@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Header from "../Utils/Header";
 import AddTask from "../Tasks/AddTask";
+import { AuthContext } from "../../Contexts/AuthContext";
 
 const UsereDashboard = () => {
 
     const [open, setOpen] = useState(false)
+
+    const {users, setUsers} = useContext(AuthContext)
+    
   return (
     <div className="min-h-screen bg-[#1c1c1c] text-white relative">
       
       <div className={`${open?"opacity-5":""}`}>
-        <Header  />
+        <Header user={users} />
         <div className="p-10 px-15 flex justify-center md:justify-between items-center">
           <p className="text-3xl hidden md:flex">👍</p>
           <button onClick={()=>{

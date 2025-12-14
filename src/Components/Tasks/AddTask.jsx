@@ -16,20 +16,21 @@ const AddTask = (props) => {
   };
 
   return (
-    <div
-      
-      className="
-        absolute
-        overflow-hidden
-        top-1/2 left-1/2
-        -translate-x-1/2 -translate-y-1/2
-        bg-neutral-950 text-white rounded-xl
-        w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%]
-        h-[95%] sm:h-[90%]
-        p-4 sm:p-6 md:p-10
-        flex flex-col 
-      "
-    >
+<div
+  className="
+    absolute
+    inset-x-0 top-4
+    mx-auto
+    bg-neutral-950 text-white rounded-xl
+    w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%]
+    max-h-[95vh]
+    p-4 sm:p-6 md:p-10
+    flex flex-col
+    overflow-hidden
+    sm:top-1/2 sm:left-1/2
+    sm:-translate-x-1/2 sm:-translate-y-1/2
+  "
+>
       {/* Header */}
       <div className="flex justify-between items-center">
         <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-emerald-500">
