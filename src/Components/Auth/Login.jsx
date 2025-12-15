@@ -9,14 +9,11 @@ const Login = () => {
   const [password, setPassword] = useState('')
  
 
-  let {users, setUsers} = useContext(AuthContext)
+const { login } = useContext(AuthContext)
  const navigate = useNavigate()
   const submitHandler = (e) => {
     e.preventDefault()
-    setUsers(prevUsers => [
-    ...prevUsers,
-    { name, email, password }
-  ]);
+login({ name, email, password })
     navigate("/user")
     setName('')
     setEmail('')

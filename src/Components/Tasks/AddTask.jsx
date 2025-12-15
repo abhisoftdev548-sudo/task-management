@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { TaskContext } from "../../Contexts/TaskContext";
 
 const AddTask = (props) => {
   const [subject, setSubject] = useState("");
   const [tag, setTag] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
-
+  const { addTask } = useContext(TaskContext)
   const submitHandler = (e) => {
     e.preventDefault();
+
+    const task = {
+      subject,
+      tag,
+      image,
+      description,
+      createdAt: Date.now(),
+    };
+
+    addTask(task);
+    props.setOpen(false);
 
     setSubject("");
     setTag("");
@@ -104,10 +116,20 @@ const AddTask = (props) => {
             type="file"
             id="image"
             required
-            value={image}
+            accept="image/*"
+            
             onChange={(e) => {
-              setImage(e.target.value);
-            }}
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      setImage(reader.result); // base64 string
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }}
             className="text-gray-300 outline-none border-2 border-emerald-800 rounded py-2 px-4 text-sm sm:text-base"
           />
         </div>
